@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+@mixin dialogBox ($backgroundColor,$width){
+    position: relative;
+    width: $width;
+    background-color: $backgroundColor;
+    margin: 40px auto;
+    padding: 10px;
+    border: 1px solid #000000;
+    
+   
+    &:after{
+        content: "";
+        position: absolute;
+        top: -6%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: #008000;
+        transform: rotate(45deg);
+        border: 1px solid #000000
+        
+    }
+}
+
+
+
+.dialog{
+    @include dialogBox(#008000, 20%);
+  
+}
+
+.dialog-text{
+    margin: 10px;
+    
+}
+.dialog-title{
+    margin-left: 10px;
+}
